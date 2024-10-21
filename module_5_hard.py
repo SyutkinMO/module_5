@@ -18,7 +18,7 @@ class Video:
 class UrTube:
     users = []
     videos = []
-    current_user = None
+    current_user = 'Вход в систему не выполнен'
     data_user = {}
     data_video = {}
     video_duration = {}
@@ -49,7 +49,7 @@ class UrTube:
             print(f'Пользователь {nickname} уже существует')
 
     def log_out(self):
-        UrTube.current_user = None
+        self.current_user = 'Вход в систему не выполнен'
 
     def add(self, *args):
         for i in range(0, len(args)):
@@ -72,7 +72,7 @@ class UrTube:
 
     def watch_video(self, title):
         if self.videos.count(title) > 0:
-            if self.current_user == None:
+            if self.current_user == 'Вход в систему не выполнен':
                 print('Войдите в аккаунт, чтобы смотерть видео')
             elif self.data_user.get(self.current_user) < 18 and self.data_video.get(title):
                 print('Вам нет 18 лет, пожалуйста покиньте страницу')
@@ -96,10 +96,13 @@ ur.add(v1, v2)
 print(ur.get_videos('лучший'))
 print(ur.get_videos('ПРОГ'))
 
+
+
 # Проверка на вход пользователя и возрастное ограничение
 ur.watch_video('Для чего девушкам парень программист?')
 ur.register('vasya_pupkin', 'lolkekcheburek', 13)
 ur.watch_video('Для чего девушкам парень программист?')
+ur.log_out()
 ur.register('urban_pythonist', 'iScX4vIJClb9YQavjAgF', 25)
 ur.watch_video('Для чего девушкам парень программист?')
 
