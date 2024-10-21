@@ -102,7 +102,6 @@ print(ur.get_videos('ПРОГ'))
 ur.watch_video('Для чего девушкам парень программист?')
 ur.register('vasya_pupkin', 'lolkekcheburek', 13)
 ur.watch_video('Для чего девушкам парень программист?')
-ur.log_out()
 ur.register('urban_pythonist', 'iScX4vIJClb9YQavjAgF', 25)
 ur.watch_video('Для чего девушкам парень программист?')
 
